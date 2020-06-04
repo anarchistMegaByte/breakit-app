@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1591297817800,
+  "timestamp": 1591299783750,
   "index": "https://anarchistmegabyte.github.io/breakit-app/index.html",
   "assetGroups": [
     {
@@ -10,8 +10,8 @@
       "urls": [
         "https://anarchistmegabyte.github.io/breakit-app/favicon.ico",
         "https://anarchistmegabyte.github.io/breakit-app/index.html",
-        "https://anarchistmegabyte.github.io/breakit-app/main-es2015.8887c58d447d166b08c8.js",
-        "https://anarchistmegabyte.github.io/breakit-app/main-es5.8887c58d447d166b08c8.js",
+        "https://anarchistmegabyte.github.io/breakit-app/main-es2015.05617479b16f10288ea8.js",
+        "https://anarchistmegabyte.github.io/breakit-app/main-es5.05617479b16f10288ea8.js",
         "https://anarchistmegabyte.github.io/breakit-app/manifest.webmanifest",
         "https://anarchistmegabyte.github.io/breakit-app/polyfills-es2015.690002c25ea8557bb4b0.js",
         "https://anarchistmegabyte.github.io/breakit-app/polyfills-es5.9e286f6d9247438cbb02.js",
@@ -50,9 +50,9 @@
     "https://anarchistmegabyte.github.io/breakit-app/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "https://anarchistmegabyte.github.io/breakit-app/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "https://anarchistmegabyte.github.io/breakit-app/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://anarchistmegabyte.github.io/breakit-app/index.html": "622886fc480c46df4363ead63aaabcbc2c171eef",
-    "https://anarchistmegabyte.github.io/breakit-app/main-es2015.8887c58d447d166b08c8.js": "0e9e4ff27fe9e14c7cffc6f9a7c51279050a36ab",
-    "https://anarchistmegabyte.github.io/breakit-app/main-es5.8887c58d447d166b08c8.js": "4ff9d0a8a4156fd60050b2cd2bde6853bd9cadf7",
+    "https://anarchistmegabyte.github.io/breakit-app/index.html": "b68670d5e91dbde9d6848e1917ac8c7df4a88880",
+    "https://anarchistmegabyte.github.io/breakit-app/main-es2015.05617479b16f10288ea8.js": "7ca5960f7f645782e9c20551a6621e4e483d2184",
+    "https://anarchistmegabyte.github.io/breakit-app/main-es5.05617479b16f10288ea8.js": "ad792bac856aeb96043577f1b97cc7cacb105e5f",
     "https://anarchistmegabyte.github.io/breakit-app/manifest.webmanifest": "4946cc097b2b5b7514c2a211ba9c0c13a870dc6b",
     "https://anarchistmegabyte.github.io/breakit-app/polyfills-es2015.690002c25ea8557bb4b0.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
     "https://anarchistmegabyte.github.io/breakit-app/polyfills-es5.9e286f6d9247438cbb02.js": "8aa26ea87b9958c6bd13b7c257c0e9940438e684",
