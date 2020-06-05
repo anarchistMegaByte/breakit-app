@@ -1,0 +1,32 @@
+<p>verify-otp works!</p>
+
+<div class="container">
+    <form (ngSubmit)="onSubmit()" #verifyOtpForm="ngForm">
+    <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input type="text" class="form-control" id="phoneNumber"
+                required
+                [(ngModel)]="pNumber" name="phoneNumber"
+                #phoneNumber="ngModel">
+        <div [hidden]="phoneNumber.valid || phoneNumber.pristine"
+            class="alert alert-danger">
+        Phone Number is required
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="otp">OTP</label>
+        <input type="text" class="form-control" id="otp"
+                required
+                [(ngModel)]="votp" name="otp"
+                #otp="ngModel">
+        <div [hidden]="otp.valid || otp.pristine"
+            class="alert alert-danger">
+        OTP is required
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!verifyOtpForm.form.valid">Submit</button>
+    </form>
+
+  </div>

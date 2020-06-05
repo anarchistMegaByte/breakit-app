@@ -1,0 +1,20 @@
+<p>request-otp works!</p>
+
+<div class="container">
+    <form (ngSubmit)="onSubmit()" #requestOtpForm="ngForm">
+    <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input type="text" class="form-control" id="phoneNumber"
+                required
+                [(ngModel)]="pNumber" name="phoneNumber"
+                #phoneNumber="ngModel">
+        <div [hidden]="phoneNumber.valid || phoneNumber.pristine"
+            class="alert alert-danger">
+        Phone Number is required
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!requestOtpForm.form.valid">Submit</button>
+    </form>
+
+  </div>

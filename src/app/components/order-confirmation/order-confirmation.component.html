@@ -1,0 +1,48 @@
+<p>order-confirmation works!</p>
+
+
+<div class="container">
+    <form (ngSubmit)="onSubmit()" #orderConfirmationForm="ngForm">
+
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name"
+                required
+                [(ngModel)]="orderDetails.name" name="name"
+                #name="ngModel">
+        <div [hidden]="name.valid || name.pristine"
+            class="alert alert-danger">
+            Name is required
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" class="form-control" id="address"
+                required
+                [(ngModel)]="orderDetails.address" name="address"
+                #address="ngModel">
+        <div [hidden]="address.valid || address.pristine"
+            class="alert alert-danger">
+            Address is required
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="deliveryslot">Delivery Slot</label>
+        <select class="form-control" id="deliveryslot"
+                required
+                [(ngModel)]="orderDetails.delivery_slot" name="deliveryslot"
+                #deliveryslot="ngModel">
+          <option *ngFor="let deliverySlot of deliverySlots" [value]="deliverySlot">{{deliverySlot}}</option>
+        </select>
+        <div [hidden]="deliveryslot.valid || deliveryslot.pristine" class="alert alert-danger">
+            Delivery Slot is required
+        </div>
+      </div>
+    
+
+    <button type="submit" class="btn btn-success" [disabled]="!orderConfirmationForm.form.valid">Submit</button>
+    </form>
+
+  </div>
