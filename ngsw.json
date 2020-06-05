@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1591381917449,
+  "timestamp": 1591382051650,
   "index": "https://anarchistmegabyte.github.io/breakit-app/index.html",
   "assetGroups": [
     {
@@ -56,7 +56,7 @@
     "https://anarchistmegabyte.github.io/breakit-app/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "https://anarchistmegabyte.github.io/breakit-app/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
     "https://anarchistmegabyte.github.io/breakit-app/firebase-messaging-sw.js": "3ba58d80f1f6c9a8d1a3b28cec872ba5d66c6f0d",
-    "https://anarchistmegabyte.github.io/breakit-app/index.html": "8198a66bd69aa578809c0a7042bf3151176fb2b7",
+    "https://anarchistmegabyte.github.io/breakit-app/index.html": "7d2a06402b12d3b30d43885836f8e671c9bf8581",
     "https://anarchistmegabyte.github.io/breakit-app/main-es2015.5bceb199496e2342d115.js": "34881f89645737deab8950ffd6ed75b0dd46e67c",
     "https://anarchistmegabyte.github.io/breakit-app/main-es5.5bceb199496e2342d115.js": "42f7a0d72df705c7c6d9956c2a5ad0e29a2c7c1a",
     "https://anarchistmegabyte.github.io/breakit-app/manifest.webmanifest": "667df5309ca5ae47e07c0bfbbe2351633bb6ee47",
