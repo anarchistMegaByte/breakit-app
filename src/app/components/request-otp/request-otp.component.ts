@@ -18,7 +18,8 @@ export class RequestOtpComponent implements OnInit {
   onSubmit(): void {
     this.coreService.requestOtp(this.pNumber).subscribe(data => {
       console.log(data)
-      this.coreService.userPhoneNumber = this.pNumber;
+      this.coreService.orderDetails.phone_number = this.pNumber;
+      console.log(this.coreService.orderDetails);
       this.router.navigate(['verify-otp']);
     });
   }

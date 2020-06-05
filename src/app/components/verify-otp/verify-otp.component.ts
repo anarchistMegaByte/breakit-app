@@ -12,7 +12,7 @@ export class VerifyOtpComponent implements OnInit {
   votp: string;
 
   constructor(private coreService: CoreService, private router: Router) {
-    this.pNumber = coreService.userPhoneNumber;
+    this.pNumber = this.coreService.orderDetails.phone_number;
    }
 
   ngOnInit(): void {
@@ -20,7 +20,7 @@ export class VerifyOtpComponent implements OnInit {
 
   onSubmit(): void {
     this.coreService.verifyOtp(this.pNumber, this.votp).subscribe(data => {
-      console.log(data)
+      console.log(this.coreService.orderDetails);
       this.router.navigate(['order-confirmation']);
     });
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CoreService } from 'src/app/services/core.service';
 import { OrderDetails } from 'src/app/models/order-details';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order-confirmation',
@@ -8,10 +9,9 @@ import { OrderDetails } from 'src/app/models/order-details';
   styleUrls: ['./order-confirmation.component.scss']
 })
 export class OrderConfirmationComponent implements OnInit {
-  orderDetails: OrderDetails;
   deliverySlots: string[];
   
-  constructor(private coreService: CoreService) {
+  constructor(private coreService: CoreService, private router: Router) {
 
     this.coreService.getDeliverySlots().subscribe(deliverySlots => {
       this.deliverySlots = deliverySlots;
@@ -19,22 +19,19 @@ export class OrderConfirmationComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.orderDetails = {
-      address: "",
-      delivery_slot: this.deliverySlots[0],
-      menu_items: [],
-      name: "",
-      order_cost: 0,
-      phone_number: "919320002501"
-    }
+    
   }
 
   onSubmit(): void {
-
-    this.coreService.confirmOrderDetails(this.orderDetails).subscribe(data => {
+    console.log(this.coreService.orderDetails);
+    this.coreService.confirmOrderDetails(this.coreService.orderDetails).subscribe(data => {
       console.log(data)
-      // this.router.navigate(['order-confirmation']);
+      this.router.navigate(['order-details']);
     });
+  }
+
+  getOrderDetails(){
+    return this.coreService.orderDetails;
   }
   
 

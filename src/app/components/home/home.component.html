@@ -1,7 +1,46 @@
 <p>home works!</p>
-<ul>
-<li *ngFor="let menuItem of menuItems">
-    {{menuItem.item}}
-</li>
-</ul>
+<div class="container custom-div">
+    <div class="card-deck">
+        <div *ngFor="let menuItem of menuItems" class="card" style="width: 18rem;">
+            <img src={{menuItem.image}} class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{menuItem.item}}</h5>
+                <p class="card-text">{{menuItem.restaurant}}</p>
+    
+                <div class="row">
+                    <div class="col-3 col-sm-6">
+                        {{menuItem.price | currency:'INR'}}
+                    </div>
+                    
+                    <button type="button" (click)="onMinus(menuItem)" class="btn btn-primary col-3 col-sm-2" >
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <input class="form-control col-3 col-sm-2" type="text" placeholder="1" readonly [value]="getItemQuantity(menuItem.food_item_id)">
+                    <button type="button" (click)="onPlus(menuItem)" class="btn btn-primary col-3 col-sm-2">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                
+    
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer" *ngIf="getTotalItems() > 0">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    {{getTotalItems()}} items for {{getTotalCost() | currency:'INR'}}
+                </div>
+                
+                <button type="button" (click)="onOrderNow()" class="btn btn-primary col" >
+                    ORDER NOW >>
+                </button>
+            </div>
+        </div>
+        <span class="text-muted">Place sticky footer content here.</span>
+    </footer>
+</div>
+
+
 

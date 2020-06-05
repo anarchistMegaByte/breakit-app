@@ -1,1 +1,6 @@
 <p>order-details works!</p>
+{{getOrderDetails() | json}}
+
+<button type="button" (click)="goHome()" class="btn btn-primary col" >
+    {{getAmount()}} ORDER NOW >>
+</button>

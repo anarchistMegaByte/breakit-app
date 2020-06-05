@@ -10,7 +10,7 @@ import { OrderConfirmationComponent } from './components/order-confirmation/orde
 const routes: Routes = [
   {
     path: "",
-    redirectTo: "/request-otp",
+    redirectTo: "/home",
     pathMatch: "full"
   },
   {
