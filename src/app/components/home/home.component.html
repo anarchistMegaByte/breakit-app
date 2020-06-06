@@ -1,3 +1,7 @@
+<div class="alert alert-primary" role="alert" *ngIf="getDeliverySlot()">
+    Your delivery slot: {{getDeliverySlot()}}
+</div>
+
 <div class="jumbotron vertical-center" *ngIf="menuItems?.length == 0">
     <h1 class="display-4">Hello, We are updating the menu !!</h1>
     <p class="lead">Please come back later again...</p>

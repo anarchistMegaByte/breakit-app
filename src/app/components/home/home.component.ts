@@ -3,6 +3,7 @@ import { FoodmenuService } from 'src/app/services/foodmenu.service';
 import { MenuItem } from 'src/app/models/menu-item';
 import { Router } from '@angular/router';
 import { CoreService } from 'src/app/services/core.service';
+import { UserinfoService } from 'src/app/services/userinfo.service';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,7 @@ export class HomeComponent implements OnInit {
   menuItems: MenuItem[] = [];
 
   
-  constructor(private coreService: CoreService, private foodMenuService: FoodmenuService, private router: Router) { 
+  constructor(private userInfoService: UserinfoService ,private coreService: CoreService, private foodMenuService: FoodmenuService, private router: Router) { 
     this.coreService.orderDetails = {
       address: "",
       name: "",
@@ -59,8 +60,15 @@ export class HomeComponent implements OnInit {
   onOrderNow() {
     this.coreService.orderDetails.menu_items = this.menuItems.filter(menuItem => menuItem.quantity > 0);
     console.log(this.coreService.orderDetails);
-    this.router.navigate(['request-otp']);
-    console.log("Order Now Clicked !!");
+    console.log(this.userInfoService.isLoggedIn());
+    if(this.userInfoService.isLoggedIn()) {
+      let userInfo = this.userInfoService.getUser();
+      this.coreService.orderDetails.phone_number = userInfo.phone_number;
+      this.coreService.orderDetails.delivery_slot = userInfo.delivery_slot;
+      this.router.navigate(['order-confirmation']);
+    } else {
+      this.router.navigate(['request-otp']);
+    }
   }
 
   getTotalCost() {
@@ -92,6 +100,10 @@ export class HomeComponent implements OnInit {
       dateTime.setDate(dateTime.getDate() + 1);
     }
     return dateTime.getDate().toString() + " " + dateTime.toLocaleString('default', {month: 'long'}) + " " + dateTime.getFullYear().toString();
+  }
+
+  getDeliverySlot() {
+    return this.userInfoService.getDeliverySlot();
   }
 
 }

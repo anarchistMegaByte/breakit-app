@@ -12,6 +12,8 @@ import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component
 import { FormsModule }   from '@angular/forms';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
 import { OrderConfirmationComponent } from './components/order-confirmation/order-confirmation.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireMessagingModule } from '@angular/fire/messaging';
 
 @NgModule({
   declarations: [
@@ -27,9 +29,11 @@ import { OrderConfirmationComponent } from './components/order-confirmation/orde
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AngularFireMessagingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
