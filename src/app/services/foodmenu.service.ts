@@ -7,11 +7,12 @@ import { MenuItem } from '../models/menu-item';
   providedIn: 'root'
 })
 export class FoodmenuService {
-
+  base_url: string = "https://623b73f33852.ngrok.io";
+  
   constructor(private httpClient: HttpClient) { }
-
+  
   getMenuForTheDay() {
-    return this.httpClient.get("https://c6eb238fcaa0.ngrok.io/foodmenu/v1/get_todays_menu/").pipe(
+    return this.httpClient.get(this.base_url + "/foodmenu/v1/get_todays_menu/").pipe(
       map(response => {
         return response['data'] as MenuItem[]; 
       })

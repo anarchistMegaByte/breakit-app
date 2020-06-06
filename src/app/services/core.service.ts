@@ -9,28 +9,28 @@ import { map } from 'rxjs/operators';
 export class CoreService {
 
   orderDetails: OrderDetails;
-  
+  base_url: string = "https://623b73f33852.ngrok.io";
   constructor(private httpClient: HttpClient) { 
 
   }
 
   requestOtp(phoneNumber: string) {
-    return this.httpClient.post("https://c6eb238fcaa0.ngrok.io/core/v1/register_or_login_otp/", {'phone_number': phoneNumber}).pipe();
+    return this.httpClient.post(this.base_url + "/core/v1/register_or_login_otp/", {'phone_number': phoneNumber}).pipe();
   }
 
   verifyOtp(phoneNumber: string, otp: string) {
-    return this.httpClient.post("https://c6eb238fcaa0.ngrok.io/core/v1/verify_otp/",{'phone_number': phoneNumber, "otp": otp}).pipe();
+    return this.httpClient.post(this.base_url + "/core/v1/verify_otp/",{'phone_number': phoneNumber, "otp": otp}).pipe();
   }
 
   getDeliverySlots() {
-    return this.httpClient.get("https://c6eb238fcaa0.ngrok.io/core/v1/get_all_delivery_slots/").pipe(
+    return this.httpClient.get(this.base_url + "/core/v1/get_all_delivery_slots/").pipe(
       map(response => {
         return response['data'] as string[]; 
       })
     );
   }
   confirmOrderDetails(orderDetails: OrderDetails) {
-    return this.httpClient.post("https://c6eb238fcaa0.ngrok.io/core/v1/confirm_order/",orderDetails).pipe();
+    return this.httpClient.post(this.base_url + "/core/v1/confirm_order/",orderDetails).pipe();
   }
 
   getTotalCost(){
