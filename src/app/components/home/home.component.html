@@ -6,12 +6,17 @@
     <h1 class="display-4">Hello, We are updating the menu !!</h1>
     <p class="lead">Please come back later again...</p>
     <hr class="my-4">
+    <p>Orders are accepted between 8 PM to 10 PM.</p>
+      <p class="lead">
 </div>
 
 <div class="jumbotron jumbotron-fluid mb-0" *ngIf="menuItems?.length > 0">
     <div class="container">
       <h1 class="display-4">What would you like to eat for your breakfast tommorrow ?</h1>
       <p class="lead">Menu for {{getMenuDate()}}.</p>
+      <hr class="my-4">
+      <p>Orders are accepted between 8 PM to 10 PM.</p>
+      <p class="lead">
     </div>
 </div>
 
@@ -32,7 +37,7 @@
                             {{menuItem.price | currency:'INR'}}
                         </div>
                         
-                        <button type="button" (click)="onMinus(menuItem)" class="btn btn-primary col-3 col-sm-2" >
+                        <button type="button" (click)="onMinus(menuItem)" class="btn btn-primary col-3 col-sm-2 vertical-align" >
                             <i class="fas fa-minus"></i>
                         </button>
                         <input class="form-control col-3 col-sm-2" style="text-align:center" type="text" placeholder="1" readonly [value]="getItemQuantity(menuItem.food_item_id)">

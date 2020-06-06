@@ -88,7 +88,7 @@ export class HomeComponent implements OnInit {
     if (dateTime.getHours() >=20 && dateTime.getHours() <=21 ) {
       return true;
     } else {
-      return true;
+      return false;
     }
   }
 
