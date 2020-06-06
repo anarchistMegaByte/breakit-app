@@ -95,7 +95,7 @@ export class HomeComponent implements OnInit {
   getMenuDate() {
     let dateTime = new Date();
     if (dateTime.getHours() > 21 && dateTime.getHours() <= 23) {
-      dateTime.setDate(dateTime.getDate() + 12);
+      dateTime.setDate(dateTime.getDate() + 2);
     } else {
       dateTime.setDate(dateTime.getDate() + 1);
     }

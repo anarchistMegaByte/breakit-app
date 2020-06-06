@@ -7,7 +7,7 @@ import { MenuItem } from '../models/menu-item';
   providedIn: 'root'
 })
 export class FoodmenuService {
-  base_url: string = "https://623b73f33852.ngrok.io";
+  base_url: string = "https://654b0087f920.ngrok.io";
   
   constructor(private httpClient: HttpClient) { }
   

@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 export class CoreService {
 
   orderDetails: OrderDetails;
-  base_url: string = "https://623b73f33852.ngrok.io";
+  base_url: string = "https://654b0087f920.ngrok.io";
   constructor(private httpClient: HttpClient) { 
 
   }
