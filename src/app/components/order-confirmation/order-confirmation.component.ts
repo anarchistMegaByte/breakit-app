@@ -25,7 +25,9 @@ export class OrderConfirmationComponent implements OnInit {
   onSubmit(): void {
     console.log(this.coreService.orderDetails);
     this.coreService.confirmOrderDetails(this.coreService.orderDetails).subscribe(data => {
-      console.log(data)
+      this.coreService.orderDetails.order_id = data["data"]["order_id"];
+      this.coreService.orderDetails.delivery_date = data["data"]["order_date"];
+      console.log(data);
       this.router.navigate(['order-details']);
     });
   }

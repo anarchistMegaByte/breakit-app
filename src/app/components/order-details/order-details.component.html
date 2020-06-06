@@ -1,6 +1,25 @@
 <p>order-details works!</p>
-{{getOrderDetails() | json}}
+<!-- {{getOrderDetails() | json}} -->
+<div class="container-fluid content-row">
+    <div class=row>
+        <div class="col-sm-6 col-lg-4 mt-2 mb-2">
+            <div class="card h-100">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <img class="card-img-top embed-responsive-item" src="https://623b73f33852.ngrok.io/media/order-rcv.png" alt="Card image cap">
+                </div>
+                
+                <div class="card-body">
+                  <h5 class="card-title">Your order is confirmed.</h5>
+                  <p class="card-text">Your order id is {{getOrderDetails().order_id}}, will be delivered on {{getOrderDetails().delivery_date}} in the slot {{getOrderDetails().delivery_slot}}.</p>
+                  <button type="button" (click)="goHome()" class="btn btn-primary col" >
+                    Go Home >>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+    </div>    
+</div>
 
-<button type="button" (click)="goHome()" class="btn btn-primary col" >
-    {{getAmount()}} ORDER NOW >>
-</button>
+
+

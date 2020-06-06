@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "breakit-aeb3c": {
+      "hosting": {
+        "breakit-app": [
+          "breakit-aeb3c"
+        ]
+      }
+    }
+  }
+}

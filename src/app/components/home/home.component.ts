@@ -20,7 +20,9 @@ export class HomeComponent implements OnInit {
       name: "",
       delivery_slot: "",
       menu_items: [],
-      phone_number: ""
+      phone_number: "",
+      delivery_date: "",
+      order_id: 0
     }
     this.foodMenuService.getMenuForTheDay().subscribe(menuItems => {
       this.menuItems = menuItems;
@@ -71,6 +73,25 @@ export class HomeComponent implements OnInit {
 
   getItemQuantity(foodItemId: number) {
     return this.coreService.getFoodItemQuantity(foodItemId);
+  }
+
+  getTimeValidation() {
+    let dateTime = new Date()
+    if (dateTime.getHours() >=20 && dateTime.getHours() <=21 ) {
+      return true;
+    } else {
+      return true;
+    }
+  }
+
+  getMenuDate() {
+    let dateTime = new Date();
+    if (dateTime.getHours() > 21 && dateTime.getHours() <= 23) {
+      dateTime.setDate(dateTime.getDate() + 12);
+    } else {
+      dateTime.setDate(dateTime.getDate() + 1);
+    }
+    return dateTime.getDate().toString() + " " + dateTime.toLocaleString('default', {month: 'long'}) + " " + dateTime.getFullYear().toString();
   }
 
 }
