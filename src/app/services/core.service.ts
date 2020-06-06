@@ -22,6 +22,10 @@ export class CoreService {
     return this.httpClient.post(this.base_url + "/core/v1/verify_otp/",{'phone_number': phoneNumber, "otp": otp}).pipe();
   }
 
+  registerToken(phoneNumber: string, token: string) {
+    return this.httpClient.post(this.base_url + "/core/v1/register_token/",{'phone_number': phoneNumber, "token": token}).pipe();
+  }
+
   getDeliverySlots() {
     return this.httpClient.get(this.base_url + "/core/v1/get_all_delivery_slots/").pipe(
       map(response => {

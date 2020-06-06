@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AngularFireMessaging } from '@angular/fire/messaging';
-import { MessagingService, CoreService } from 'src/app/services';
+import { CoreService } from 'src/app/services';
 
 
 @Component({
@@ -12,18 +11,8 @@ import { MessagingService, CoreService } from 'src/app/services';
 export class RequestOtpComponent implements OnInit {
   pNumber: string;
 
-  constructor(private angularFireMessaging: AngularFireMessaging, private messagingService: MessagingService, private coreService: CoreService, private router: Router) {
-    navigator.serviceWorker.getRegistration().then(registration => {
-      if (registration) {
-        this.angularFireMessaging.useServiceWorker(registration).then(() => {
-          this.messagingService.requestPermission();
-
-          this.angularFireMessaging.messages.subscribe((payload) => {
-            console.log(payload);
-          });
-        });
-      }
-    });
+  constructor(private coreService: CoreService, private router: Router) {
+    
    }
 
   ngOnInit(): void {
