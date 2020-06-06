@@ -21,6 +21,13 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 >>> npm i angular-http-server
 >>> http-server -p 8080 -c -1 dist/breakit-app
 
+- Change base URLs pointing to your local server.
+
+```
+Make change in following files:
+1. src/app/service/core.service.ts -> base_url: string = "https://fc425648a9d9.ngrok.io";
+2. src/app/service/foodmenu.service.ts -> base_url: string = "https://fc425648a9d9.ngrok.io";
+```
 
 ## Code scaffolding
 
