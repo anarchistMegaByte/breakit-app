@@ -6,6 +6,22 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Local Running Steps
+
+- Install node on your system.
+- Clone the project from [here](https://github.com/anarchistMegaByte/breakit-app.git)
+- Istall all packages used by the project:
+>>> npm install
+
+- Build the project so that distribution package is created.
+>>> ng build --prod
+
+- Installing HTTP server
+
+>>> npm i angular-http-server
+>>> http-server -p 8080 -c -1 dist/breakit-app
+
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
