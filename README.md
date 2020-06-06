@@ -29,6 +29,8 @@ Make change in following files:
 2. src/app/service/foodmenu.service.ts -> base_url: string = "https://fc425648a9d9.ngrok.io";
 ```
 
+>>> Images will load slowing since we are using local setup for file serving.
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
