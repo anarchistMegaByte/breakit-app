@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HomeComponent } from './components/home/home.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RequestOtpComponent } from './components/request-otp/request-otp.component';
 import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component'
 import { FormsModule }   from '@angular/forms';
@@ -14,6 +14,7 @@ import { OrderDetailsComponent } from './components/order-details/order-details.
 import { OrderConfirmationComponent } from './components/order-confirmation/order-confirmation.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
+import { RouteInterceptor } from './interceptors/route-interceptor';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { AngularFireMessagingModule } from '@angular/fire/messaging';
     AngularFireMessagingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: RouteInterceptor, multi: true }],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
